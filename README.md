@@ -2,7 +2,7 @@
 
 This repository contains a MATLAB script for simulating the **measurement-based Dicke-state generation protocol** proposed in:
 
-> Chen-yi Zhang and Jun Jing, *Efficient nonclassical state preparation via generalized parity measurement*, **Physical Review A 113, 022420 (2026)**. fileciteturn0file0
+> Chen-yi Zhang and Jun Jing, *Efficient nonclassical state preparation via generalized parity measurement*, **Physical Review A 113, 022420 (2026)**.
 
 The code corresponds to the **Dicke-state generation** part of the paper, where a large spin ensemble is driven toward a target Dicke state by repeated nonunitary filtering steps induced by evolution and projective measurement.
 
@@ -10,21 +10,21 @@ The code corresponds to the **Dicke-state generation** part of the paper, where 
 
 The protocol works in the permutation-symmetric subspace of a spin ensemble with total spin
 
-\[
+$$\[
 J = M/2,
-\]
+\]$$
 
-where \(M\) is the number of spin-1/2 particles.
+where $\(M\)$ is the number of spin-1/2 particles.
 
 The script:
 
 - constructs the collective spin operators in the Dicke basis,
 - prepares an initial spin-coherent-like state,
-- defines a target Dicke state \(|J,m_t\rangle\),
+- defines a target Dicke state $\(|J,m_t\rangle\)$,
 - applies a sequence of diagonal nonunitary filtering operators,
 - tracks the fidelity, success probability, and quantum Fisher information (QFI).
 
-The numerical logic follows the Dicke-state section of the paper, especially the discussion around the spin-star model and the effective generalized parity measurement used to prepare the center Dicke state. fileciteturn0file0L307-L349 fileciteturn0file0L350-L386
+The numerical logic follows the Dicke-state section of the paper, especially the discussion around the spin-star model and the effective generalized parity measurement used to prepare the center Dicke state.
 
 ## Files
 
@@ -35,27 +35,27 @@ The numerical logic follows the Dicke-state section of the paper, especially the
 
 The Hilbert space is the Dicke basis
 
-\[
+$$\[
 |J,-J\rangle, |J,-J+1\rangle, \dots, |J,J\rangle,
-\]
+\]$$
 
 with dimension
 
-\[
+$$\[
 2J+1.
-\]
+\]$$
 
 The target state is chosen as
 
-\[
+$$\[
 |J,m_t\rangle,
-\]
+\]$$
 
 and in the current script the default choice is the **center Dicke state**
 
-\[
+$$\[
 |J,0\rangle.
-\]
+\]$$
 
 The protocol applies a sequence of approximate generalized-parity filters. After each successful round, the state is renormalized and becomes progressively concentrated near the target Dicke state. This is the same mechanism described in the paper for constructing an effective GPM in the spin-ensemble setting. fileciteturn0file0L321-L349 fileciteturn0file0L350-L386
 
